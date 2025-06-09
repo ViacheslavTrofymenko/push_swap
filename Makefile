@@ -6,7 +6,7 @@
 #    By: vtrofyme <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/19 10:26:16 by vtrofyme          #+#    #+#              #
-#    Updated: 2025/06/10 01:00:35 by vtrofyme         ###   ########.fr        #
+#    Updated: 2025/06/10 01:23:09 by vtrofyme         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ $(NAME): $(OBJS)
 	$(CC) $(OBJS) -L libft -lft -o $(NAME)
 
 clean:
-	$(MAKE) -C libft clean
+	$(MAKE) -C libft fclean
 	@rm -f	$(OBJS)
 
 fclean: clean

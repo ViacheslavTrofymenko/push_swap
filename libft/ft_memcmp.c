@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtrofyme <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/10 00:59:35 by vtrofyme          #+#    #+#             */
-/*   Updated: 2025/06/10 01:27:03 by vtrofyme         ###   ########.fr       */
+/*   Created: 2025/04/10 14:51:50 by vtrofyme          #+#    #+#             */
+/*   Updated: 2025/04/10 14:51:53 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
+#include "libft.h"
 
-int	ft_error()
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	ft_putstr_fd("Error\n", 2);
-	return (1);
-}
+	size_t			i;
+	unsigned char	*c_s1;
+	unsigned char	*c_s2;
 
-
-
-int	main(int argc, char **argv)
-{
-	t_list	**stack_a;
-	t_list	**stack_b;
-
-	if (argc < 2)
-		return (ft_error());
-	ft_check_args(argc, argv);
-	stack_a = (t_list **)calloc
+	i = 0;
+	c_s1 = (unsigned char *)s1;
+	c_s2 = (unsigned char *)s2;
+	while (i < n)
+	{
+		if (c_s1[i] != c_s2[i])
+			return (c_s1[i] - c_s2[i]);
+		i++;
+	}
 	return (0);
 }

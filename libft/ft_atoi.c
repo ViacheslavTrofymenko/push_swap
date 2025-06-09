@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtrofyme <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/10 00:59:35 by vtrofyme          #+#    #+#             */
-/*   Updated: 2025/06/10 01:27:03 by vtrofyme         ###   ########.fr       */
+/*   Created: 2025/04/10 16:37:34 by vtrofyme          #+#    #+#             */
+/*   Updated: 2025/04/10 16:37:37 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
+#include "libft.h"
 
-int	ft_error()
+int	ft_atoi(const char *nptr)
 {
-	ft_putstr_fd("Error\n", 2);
-	return (1);
-}
+	int	num;
+	int	sign;
 
-
-
-int	main(int argc, char **argv)
-{
-	t_list	**stack_a;
-	t_list	**stack_b;
-
-	if (argc < 2)
-		return (ft_error());
-	ft_check_args(argc, argv);
-	stack_a = (t_list **)calloc
-	return (0);
+	sign = 1;
+	num = 0;
+	while ((*nptr > 8 && *nptr < 14) || *nptr == 32)
+		nptr++;
+	if (*nptr == '-' || *nptr == '+')
+	{
+		if (*nptr == '-')
+			sign = -1;
+		nptr++;
+	}
+	while (*nptr >= '0' && *nptr <= '9')
+	{
+		num = num * 10 + (*nptr - '0');
+		nptr++;
+	}
+	return (sign * num);
 }

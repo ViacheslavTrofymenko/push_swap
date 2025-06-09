@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtrofyme <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/10 00:59:35 by vtrofyme          #+#    #+#             */
-/*   Updated: 2025/06/10 01:27:03 by vtrofyme         ###   ########.fr       */
+/*   Created: 2025/04/14 12:28:50 by vtrofyme          #+#    #+#             */
+/*   Updated: 2025/04/14 12:28:52 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
+#include "libft.h"
 
-int	ft_error()
+t_list	*ft_lstlast(t_list *lst)
 {
-	ft_putstr_fd("Error\n", 2);
-	return (1);
-}
-
-
-
-int	main(int argc, char **argv)
-{
-	t_list	**stack_a;
-	t_list	**stack_b;
-
-	if (argc < 2)
-		return (ft_error());
-	ft_check_args(argc, argv);
-	stack_a = (t_list **)calloc
-	return (0);
+	if (!lst)
+		return (NULL);
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst);
 }

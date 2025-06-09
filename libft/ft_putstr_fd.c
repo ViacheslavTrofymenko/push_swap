@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtrofyme <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/10 00:59:35 by vtrofyme          #+#    #+#             */
-/*   Updated: 2025/06/10 01:27:03 by vtrofyme         ###   ########.fr       */
+/*   Created: 2025/04/14 10:41:55 by vtrofyme          #+#    #+#             */
+/*   Updated: 2025/04/14 10:42:05 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
+#include "libft.h"
 
-int	ft_error()
+void	ft_putstr_fd(char *s, int fd)
 {
-	ft_putstr_fd("Error\n", 2);
-	return (1);
-}
-
-
-
-int	main(int argc, char **argv)
-{
-	t_list	**stack_a;
-	t_list	**stack_b;
-
-	if (argc < 2)
-		return (ft_error());
-	ft_check_args(argc, argv);
-	stack_a = (t_list **)calloc
-	return (0);
+	while (*s)
+	{
+		write(fd, s, 1);
+		s++;
+	}
 }

@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtrofyme <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/10 00:59:35 by vtrofyme          #+#    #+#             */
-/*   Updated: 2025/06/10 01:27:03 by vtrofyme         ###   ########.fr       */
+/*   Created: 2025/04/08 16:54:58 by vtrofyme          #+#    #+#             */
+/*   Updated: 2025/04/08 16:55:02 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
+#include "libft.h"
 
-int	ft_error()
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	ft_putstr_fd("Error\n", 2);
-	return (1);
-}
+	unsigned char	*c_dest;
+	unsigned char	*c_src;
+	size_t			i;
 
-
-
-int	main(int argc, char **argv)
-{
-	t_list	**stack_a;
-	t_list	**stack_b;
-
-	if (argc < 2)
-		return (ft_error());
-	ft_check_args(argc, argv);
-	stack_a = (t_list **)calloc
-	return (0);
+	if (n == 0)
+		return (dest);
+	if (!dest && !src)
+		return (NULL);
+	i = 0;
+	c_dest = (unsigned char *) dest;
+	c_src = (unsigned char *) src;
+	while (i < n)
+	{
+		*c_dest = *c_src;
+		c_dest++;
+		c_src++;
+		i++;
+	}
+	return (dest);
 }

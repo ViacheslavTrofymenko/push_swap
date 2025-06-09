@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtrofyme <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/10 00:59:35 by vtrofyme          #+#    #+#             */
-/*   Updated: 2025/06/10 01:27:03 by vtrofyme         ###   ########.fr       */
+/*   Created: 2025/04/11 19:13:17 by vtrofyme          #+#    #+#             */
+/*   Updated: 2025/04/11 19:13:19 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
+#include "libft.h"
 
-int	ft_error()
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	ft_putstr_fd("Error\n", 2);
-	return (1);
-}
+	size_t	i;
+	size_t	total_size;
+	char	*ptr;
 
-
-
-int	main(int argc, char **argv)
-{
-	t_list	**stack_a;
-	t_list	**stack_b;
-
-	if (argc < 2)
-		return (ft_error());
-	ft_check_args(argc, argv);
-	stack_a = (t_list **)calloc
-	return (0);
+	if (nmemb != 0 && size != 0)
+	{
+		if (nmemb > SIZE_MAX / size)
+			return (NULL);
+		total_size = nmemb * size;
+	}
+	else
+		total_size = 0;
+	ptr = malloc(total_size);
+	if (ptr)
+	{
+		i = 0;
+		while (i < total_size)
+		{
+			ptr[i] = '\0';
+			i++;
+		}
+	}
+	return ((void *)ptr);
 }

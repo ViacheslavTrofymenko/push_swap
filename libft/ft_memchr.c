@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtrofyme <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/10 00:59:35 by vtrofyme          #+#    #+#             */
-/*   Updated: 2025/06/10 01:27:03 by vtrofyme         ###   ########.fr       */
+/*   Created: 2025/04/10 14:32:15 by vtrofyme          #+#    #+#             */
+/*   Updated: 2025/04/10 14:32:17 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
+#include "libft.h"
 
-int	ft_error()
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	ft_putstr_fd("Error\n", 2);
-	return (1);
-}
+	size_t			i;
+	unsigned char	*ptr_s;
+	unsigned char	char_c;
 
-
-
-int	main(int argc, char **argv)
-{
-	t_list	**stack_a;
-	t_list	**stack_b;
-
-	if (argc < 2)
-		return (ft_error());
-	ft_check_args(argc, argv);
-	stack_a = (t_list **)calloc
-	return (0);
+	i = 0;
+	ptr_s = (unsigned char *)s;
+	char_c = (unsigned char)c;
+	while (i < n)
+	{
+		if (ptr_s[i] == char_c)
+			return ((void *)(ptr_s + i));
+		i++;
+	}
+	return (NULL);
 }
