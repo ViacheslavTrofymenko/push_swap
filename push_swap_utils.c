@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtrofyme <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/10 00:55:13 by viacheslav        #+#    #+#             */
-/*   Updated: 2025/06/10 01:39:32 by vtrofyme         ###   ########.fr       */
+/*   Created: 2025/06/10 01:35:01 by vtrofyme          #+#    #+#             */
+/*   Updated: 2025/06/10 01:41:06 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-
-typedef struct s_stack
+int	ft_error()
 {
-	int				data;
-	struct s_stack	*next;
-	struct s_stack	*prev;
-}					t_stack;
+	ft_putstr_fd("Error\n", 2);
+	exit (1);
+}
 
-int	ft_error();
+void	ft_free(t_stack **stack)
+{
+	t_stack	*tmp;
 
-#endif
+	if (!stack)
+		return ;
+	while (*stack)
+	{
+		tmp = (*stack)->next;
+		(*stack)->data = 0;
+		free(*stack);
+		*stack = tmp;
+	}
+}
