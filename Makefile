@@ -14,7 +14,7 @@ NAME		= push_swap
 CC			= cc
 CFLAGS		= -Wall -Werror -Wextra -g3
 
-SRCS		= main.c forks.c
+SRCS		= main.c
 
 OBJS		= $(SRCS:.c=.o)
 
@@ -25,11 +25,9 @@ $(NAME): $(OBJS)
 	$(CC) $(OBJS) -L libft -lft -o $(NAME)
 
 clean:
-	$(MAKE) -C libft fclean
 	@rm -f	$(OBJS)
 
 fclean: clean
-	$(MAKE) -C libft fclean
 	@rm -f	$(NAME)
 
 re: fclean all

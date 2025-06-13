@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_fill_stack.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtrofyme <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/10 00:59:35 by vtrofyme          #+#    #+#             */
-/*   Updated: 2025/06/12 15:12:49 by vtrofyme         ###   ########.fr       */
+/*   Created: 2025/06/13 13:46:48 by vtrofyme          #+#    #+#             */
+/*   Updated: 2025/06/13 13:46:50 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "push_swap.h"
 
-int	ft_check_arguments(char **argv)
+void	ft_fill_stack(t_stack **a, char **argv, int flag_argc_2)
 {
+	long	nbr;
+	int		i;
 
-}
-
-int	main(int argc, char **argv)
-{
-	t_stack	*a;
-	t_stack	*b;
-	int		flag_argc_2;
-
-	a = NULL;
-	b = NULL;
-	if (argc == 1 || (argc == 2 && !argv[1][0]))
-		return (1);
-	else if (argc == 2)
+	i = 0;
+	while (argv[i])
 	{
-		argv = ft_split(argv[1], ' ');
-		flag_argc_2 = 1;
+		if (error_syntax(argv[i]))
+			error_free(a, argv, flag_argc_2);
+		nbr = ft_atol(argv[i]);
+		if (nbr > INT_MAX || nbr < INT_MIN)
+			error_free(a, argv, flag_argc_2);
+		if (error_repetition(*a, (int)nbr))
+			error_free(a, argv, flag_argc_2);
+		append_node(a, (int)nbr);
+		++i;
 	}
-	ft_fill_stack(&a, argv + 1, flag_argc_2);
+	if (flag_argc_2)
+		free_matrix(argv);
 
 }
