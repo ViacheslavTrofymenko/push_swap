@@ -12,11 +12,6 @@
 
 # include "push_swap.h"
 
-int	ft_check_arguments(char **argv)
-{
-
-}
-
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
@@ -25,6 +20,7 @@ int	main(int argc, char **argv)
 
 	a = NULL;
 	b = NULL;
+	flag_argc_2 = 0;
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (1);
 	else if (argc == 2)
@@ -32,6 +28,6 @@ int	main(int argc, char **argv)
 		argv = ft_split(argv[1], ' ');
 		flag_argc_2 = 1;
 	}
-	ft_fill_stack(&a, argv + 1, flag_argc_2);
+	ft_fill_stack(&a, argv, flag_argc_2);
 
 }

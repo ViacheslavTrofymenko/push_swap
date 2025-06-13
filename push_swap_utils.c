@@ -12,13 +12,7 @@
 
 #include "push_swap.h"
 
-int	ft_error()
-{
-	ft_putstr_fd("Error\n", 2);
-	exit (1);
-}
-
-void	ft_free(t_stack **stack)
+void	ft_free_stack(t_stack **stack)
 {
 	t_stack	*tmp;
 
@@ -31,4 +25,55 @@ void	ft_free(t_stack **stack)
 		free(*stack);
 		*stack = tmp;
 	}
+	*stack = NULL;
+}
+void	ft_free_after_split(char **argv)
+{
+	int	i;
+
+	i = 0;
+	if (!argv || !*argv)
+		return ;
+	while (argv[i])
+	{
+		free(argv[i]);
+		i++;
+	}
+}
+void	ft_error(t_stack **a, char **argv, int flag_argc_2)
+{
+	ft_free_stack(a);
+	if (flag_argc_2)
+		ft_free_after_split(argv);
+	write(2, "Error\n", 6);
+	exit (1);
+}
+
+int	ft_is_syntax_error(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (str[0] == '+' || str[0] == '-')
+		i++;
+	while (str[i])
+	{
+		if (str[i] < '0' && str[i] > '9')
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+int	ft_is_duplicated(t_stack *a, int nbr)
+{
+	if (!a)
+		return (0);
+	while (a)
+	{
+		if (a->value == nbr)
+			return (1);
+		a = a->next;
+	}
+	return (0);
 }

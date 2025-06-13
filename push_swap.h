@@ -19,7 +19,7 @@
 
 typedef struct s_stack
 {
-	int				data;
+	int				value;
 	int				current_index;
 	int				final_index;
 	int				push_price;
@@ -31,5 +31,10 @@ typedef struct s_stack
 }					t_stack;
 
 void	ft_fill_stack(t_stack **a, char **argv, int flag_argc_2);
+void	ft_free_stack(t_stack **stack);
+void	ft_error(t_stack **a, char **argv, int flag_argc_2);
+int		ft_is_syntax_error(char *str);
+int		ft_is_duplicated(t_stack *a, int nbr);
+char	**ft_split(char *str, char separator);
 
 #endif

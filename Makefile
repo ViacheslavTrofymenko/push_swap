@@ -14,7 +14,7 @@ NAME		= push_swap
 CC			= cc
 CFLAGS		= -Wall -Werror -Wextra -g3
 
-SRCS		= main.c
+SRCS		= main.c ft_fill_stack.c ft_split push_swap_utils.c
 
 OBJS		= $(SRCS:.c=.o)
 
