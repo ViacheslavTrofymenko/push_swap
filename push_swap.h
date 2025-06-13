@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vtrofyme <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vtrofyme <vtrofyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 00:55:13 by viacheslav        #+#    #+#             */
-/*   Updated: 2025/06/10 01:39:32 by vtrofyme         ###   ########.fr       */
+/*   Updated: 2025/06/13 16:58:45 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,10 @@ void	ft_error(t_stack **a, char **argv, int flag_argc_2);
 int		ft_is_syntax_error(char *str);
 int		ft_is_duplicated(t_stack *a, int nbr);
 char	**ft_split(char *str, char separator);
+t_stack	*find_last_node(t_stack *head);
+void	append_node(t_stack **stack, int nbr);
+t_stack	*find_min_value(t_stack *stack);
+t_stack	*find_cheapest(t_stack *stack);
+int		stack_len(t_stack *stack);
 
 #endif
