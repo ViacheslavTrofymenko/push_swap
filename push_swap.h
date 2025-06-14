@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vtrofyme <vtrofyme@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vtrofyme <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 00:55:13 by viacheslav        #+#    #+#             */
-/*   Updated: 2025/06/14 19:33:19 by vtrofyme         ###   ########.fr       */
+/*   Updated: 2025/06/15 00:08:01 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,22 @@ t_stack	*find_min_value(t_stack *stack);
 t_stack	*find_cheapest(t_stack *stack);
 int		stack_len(t_stack *stack);
 void	handle_three(t_stack **a);
+void	sa(t_stack **a);
+void	sb(t_stack **b);
+void	ss(t_stack **a, t_stack **b);
+void	pa(t_stack **a, t_stack **b);
+void	pb(t_stack **b, t_stack **a);
+void	ra(t_stack **a);
+void	rb(t_stack **b);
+void	rr(t_stack **a, t_stack **b);
+void	rra(t_stack **a);
+void	rrb(t_stack **b);
+void	rrr(t_stack **a, t_stack **b);
+void	push_swap(t_stack **a, t_stack **b);
+void	init_nodes(t_stack *a, t_stack *b);
+void	finish_rotation(t_stack **stack, t_stack *top_node, char stack_name);
+void	handle_five(t_stack **a, t_stack **b);
+void	set_current_position(t_stack *stack);
+
 
 #endif

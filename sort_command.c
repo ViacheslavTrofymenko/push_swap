@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_command.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vtrofyme <vtrofyme@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vtrofyme <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 19:52:21 by vtrofyme          #+#    #+#             */
-/*   Updated: 2025/06/14 20:13:34 by vtrofyme         ###   ########.fr       */
+/*   Updated: 2025/06/15 00:08:33 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void reverse_rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node
 	while (*a != cheapest_node->target_node && *b != cheapest_node)
 		rrr(a, b);
 	set_current_position(*a);
-	set_current_postion(*b);
+	set_current_position(*b);
 }
 
 void	finish_rotation(t_stack **stack, t_stack *top_node, char stack_name)
@@ -53,7 +53,7 @@ static void	move_nodes(t_stack **a, t_stack **b)
 {
 	t_stack	*cheapest_node;
 
-	cheapest_node = return_cheapest(*b);
+	cheapest_node = find_cheapest(*b);
 	if (cheapest_node->is_above_median
 		&& cheapest_node->target_node->is_above_median)
 		rotate_both(a, b, cheapest_node);
@@ -77,7 +77,7 @@ void	push_swap(t_stack **a, t_stack **b)
 		while (len_a-- > 3)
 			pb(b, a);
 	}
-	tiny_sort(a);
+	handle_three(a);
 	while (*b)
 	{
 		init_nodes(*a, *b);
