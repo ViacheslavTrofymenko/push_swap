@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fill_stack.c                                    :+:      :+:    :+:   */
+/*   fill_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtrofyme <vtrofyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 13:46:48 by vtrofyme          #+#    #+#             */
-/*   Updated: 2025/06/14 16:27:19 by vtrofyme         ###   ########.fr       */
+/*   Updated: 2025/06/14 17:13:03 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int	ft_atoi(const char *nptr)
 	return (sign * num);
 }
 
-void	ft_fill_stack(t_stack **a, char **argv, int flag_argc_2)
+void	fill_stack(t_stack **a, char **argv, int flag_argc_2)
 {
 	long	nbr;
 	int		i;
@@ -43,16 +43,16 @@ void	ft_fill_stack(t_stack **a, char **argv, int flag_argc_2)
 	i = 0;
 	while (argv[i])
 	{
-		if (ft_is_syntax_error(argv[i]))
+		if (is_syntax_error(argv[i]))
 			ft_error(a, argv, flag_argc_2);
 		nbr = ft_atoi(argv[i]);
 		if (nbr > INT_MAX || nbr < INT_MIN)
 			ft_error(a, argv, flag_argc_2);
-		if (ft_is_duplicated(*a, (int)nbr))
+		if (is_duplicated(*a, (int)nbr))
 			ft_error(a, argv, flag_argc_2);
 		append_node(a, (int)nbr);
 		i++;
 	}
 	if (flag_argc_2)
-		ft_free_after_split(argv);
+		free_after_split(argv);
 }

@@ -6,13 +6,13 @@
 /*   By: vtrofyme <vtrofyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 01:35:01 by vtrofyme          #+#    #+#             */
-/*   Updated: 2025/06/14 16:15:49 by vtrofyme         ###   ########.fr       */
+/*   Updated: 2025/06/14 17:13:07 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_free_stack(t_stack **stack)
+void	free_stack(t_stack **stack)
 {
 	t_stack	*tmp;
 
@@ -27,7 +27,7 @@ void	ft_free_stack(t_stack **stack)
 	}
 	*stack = NULL;
 }
-void	ft_free_after_split(char **argv)
+void	free_after_split(char **argv)
 {
 	int	i;
 
@@ -44,12 +44,12 @@ void	ft_error(t_stack **a, char **argv, int flag_argc_2)
 {
 	ft_free_stack(a);
 	if (flag_argc_2)
-		ft_free_after_split(argv);
+		free_after_split(argv);
 	write(2, "Error\n", 6);
 	exit (1);
 }
 
-int	ft_is_syntax_error(char *str)
+int	is_syntax_error(char *str)
 {
 	int	i;
 
@@ -65,7 +65,7 @@ int	ft_is_syntax_error(char *str)
 	return (0);
 }
 
-int	ft_is_duplicated(t_stack *a, int nbr)
+int	is_duplicated(t_stack *a, int nbr)
 {
 	if (!a)
 		return (0);

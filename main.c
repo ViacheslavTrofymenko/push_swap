@@ -6,7 +6,7 @@
 /*   By: vtrofyme <vtrofyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 00:59:35 by vtrofyme          #+#    #+#             */
-/*   Updated: 2025/06/14 16:54:51 by vtrofyme         ###   ########.fr       */
+/*   Updated: 2025/06/14 17:12:32 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int argc, char **argv)
 		argv = ft_split(argv[1], ' ');
 		flag_argc_2 = 1;
 	}
-	ft_fill_stack(&a, argv, flag_argc_2);
+	fill_stack(&a, argv, flag_argc_2);
 	if (!stack_sorted(a))
 	{
 		if (stack_len(a) == 2)
@@ -38,6 +38,6 @@ int	main(int argc, char **argv)
 		else
 			ft_push_swap(&a, &b);
 	}
-	ft_free_stack(&a);
+	free_stack(&a);
 	return (0);
 }
