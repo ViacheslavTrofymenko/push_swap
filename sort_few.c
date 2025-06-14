@@ -6,7 +6,7 @@
 /*   By: vtrofyme <vtrofyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 17:18:16 by vtrofyme          #+#    #+#             */
-/*   Updated: 2025/06/14 19:39:42 by vtrofyme         ###   ########.fr       */
+/*   Updated: 2025/06/14 19:46:01 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,13 @@ void	handle_three(t_stack **a)
 		rra(a);
 	if ((*a)->value > (*a)->next->value)
 		sa(a);
+}
+void	handle_five(t_stack **a, t_stack **b)
+{
+	while (stack_len(*a) > 3)
+	{
+		init_nodes(*a, *b);
+		finish_rotation(a, find_min_value(*a), 'a');
+		pb(b, a);
+	}
 }
