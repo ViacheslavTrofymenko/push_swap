@@ -6,7 +6,7 @@
 /*   By: vtrofyme <vtrofyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 00:55:13 by viacheslav        #+#    #+#             */
-/*   Updated: 2025/06/14 17:13:10 by vtrofyme         ###   ########.fr       */
+/*   Updated: 2025/06/14 17:20:59 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	free_stack(t_stack **stack);
 void	ft_error(t_stack **a, char **argv, int flag_argc_2);
 int		is_syntax_error(char *str);
 int		is_duplicated(t_stack *a, int nbr);
+int		is_stack_sorted(t_stack *stack);
 char	**ft_split(char *str, char separator);
 t_stack	*find_last_node(t_stack *head);
 void	append_node(t_stack **stack, int nbr);
