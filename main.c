@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vtrofyme <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vtrofyme <vtrofyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 00:59:35 by vtrofyme          #+#    #+#             */
-/*   Updated: 2025/06/12 15:12:49 by vtrofyme         ###   ########.fr       */
+/*   Updated: 2025/06/14 16:54:51 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,15 @@ int	main(int argc, char **argv)
 		flag_argc_2 = 1;
 	}
 	ft_fill_stack(&a, argv, flag_argc_2);
-
+	if (!stack_sorted(a))
+	{
+		if (stack_len(a) == 2)
+			sa(&a, 0);
+		else if (stack_len(a) == 3)
+			ft_sort_three(&a);
+		else
+			ft_push_swap(&a, &b);
+	}
+	ft_free_stack(&a);
+	return (0);
 }

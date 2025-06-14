@@ -6,7 +6,7 @@
 /*   By: vtrofyme <vtrofyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 16:28:12 by vtrofyme          #+#    #+#             */
-/*   Updated: 2025/06/13 16:57:46 by vtrofyme         ###   ########.fr       */
+/*   Updated: 2025/06/14 16:42:18 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,11 +68,11 @@ t_stack	*find_min_value(t_stack *stack)
 
 t_stack	*find_cheapest(t_stack *stack)
 {
-	if (stack = NULL)
+	if (stack == NULL)
 		return (NULL);
 	while (stack)
 	{
-		if (stack->cheapest)
+		if (stack->is_cheapest)
 			return (stack);
 		stack = stack->next;
 	}

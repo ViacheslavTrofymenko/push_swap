@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vtrofyme <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vtrofyme <vtrofyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 01:35:01 by vtrofyme          #+#    #+#             */
-/*   Updated: 2025/06/10 01:41:06 by vtrofyme         ###   ########.fr       */
+/*   Updated: 2025/06/14 16:15:49 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_free_stack(t_stack **stack)
 	while (*stack)
 	{
 		tmp = (*stack)->next;
-		(*stack)->data = 0;
+		(*stack)->value = 0;
 		free(*stack);
 		*stack = tmp;
 	}
