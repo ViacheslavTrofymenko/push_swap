@@ -6,7 +6,7 @@
 /*   By: vtrofyme <vtrofyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 17:36:04 by vtrofyme          #+#    #+#             */
-/*   Updated: 2025/06/14 18:23:34 by vtrofyme         ###   ########.fr       */
+/*   Updated: 2025/06/14 19:32:04 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,24 +32,21 @@ static void	swap(t_stack **head)
 	*head = second;
 }
 
-void	sa(t_stack **a, int checker)
+void	sa(t_stack **a)
 {
 	swap(a);
-	if (!checker)
-		write(1, "sa\n", 3);
+	write(1, "sa\n", 3);
 }
 
-void	sb(t_stack **b, int checker)
+void	sb(t_stack **b)
 {
 	swap(b);
-	if (!checker)
-		write(1, "sb\n", 3);
+	write(1, "sb\n", 3);
 }
 
-void	ss(t_stack **a, t_stack **b, int checker)
+void	ss(t_stack **a, t_stack **b)
 {
 	swap(a);
 	swap(b);
-	if (!checker)
-		write(1, "ss\n", 3);
+	write(1, "ss\n", 3);
 }

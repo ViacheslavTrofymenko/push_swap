@@ -6,7 +6,7 @@
 /*   By: vtrofyme <vtrofyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 17:18:16 by vtrofyme          #+#    #+#             */
-/*   Updated: 2025/06/14 18:09:03 by vtrofyme         ###   ########.fr       */
+/*   Updated: 2025/06/14 19:39:42 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,19 @@ static t_stack	*find_max_value(t_stack *stack)
 		stack = stack->next;
 	}
 	return (node_with_max);
+}
+
+void	handle_three(t_stack **a)
+{
+	t_stack	*node_with_max;
+
+	if (!a || !*a)
+		return ;
+	node_with_max = find_max_value(*a);
+	if (node_with_max == *a)
+		ra(a);
+	if (node_with_max == (*a)->next)
+		rra(a);
+	if ((*a)->value > (*a)->next->value)
+		sa(a);
 }

@@ -6,7 +6,7 @@
 /*   By: vtrofyme <vtrofyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 00:55:13 by viacheslav        #+#    #+#             */
-/*   Updated: 2025/06/14 17:20:59 by vtrofyme         ###   ########.fr       */
+/*   Updated: 2025/06/14 19:33:19 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,6 @@ void	append_node(t_stack **stack, int nbr);
 t_stack	*find_min_value(t_stack *stack);
 t_stack	*find_cheapest(t_stack *stack);
 int		stack_len(t_stack *stack);
+void	handle_three(t_stack **a);
+
 #endif

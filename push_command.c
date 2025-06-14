@@ -6,7 +6,7 @@
 /*   By: vtrofyme <vtrofyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 18:26:09 by vtrofyme          #+#    #+#             */
-/*   Updated: 2025/06/14 18:38:34 by vtrofyme         ###   ########.fr       */
+/*   Updated: 2025/06/14 19:32:32 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,16 +37,14 @@ static void	push(t_stack **dest, t_stack **src)
 	}
 }
 
-void	pa(t_stack **a, t_stack **b, int checker)
+void	pa(t_stack **a, t_stack **b)
 {
 	push(a, b);
-	if (!checker)
-		write(1, "pa\n", 3);
+	write(1, "pa\n", 3);
 }
 
-void	pb(t_stack **b, t_stack **a, int checker)
+void	pb(t_stack **b, t_stack **a)
 {
 	push(b, a);
-	if (!checker)
-		write(1, "pb\n", 3);
+	write(1, "pb\n", 3);
 }

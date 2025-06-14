@@ -6,7 +6,7 @@
 /*   By: vtrofyme <vtrofyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 00:59:35 by vtrofyme          #+#    #+#             */
-/*   Updated: 2025/06/14 17:20:44 by vtrofyme         ###   ########.fr       */
+/*   Updated: 2025/06/14 19:33:58 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main(int argc, char **argv)
 	if (!is_stack_sorted(a))
 	{
 		if (stack_len(a) == 2)
-			sa(&a, 0);
+			sa(&a);
 		else if (stack_len(a) == 3)
 			handle_three(&a);
 		else

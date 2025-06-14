@@ -6,7 +6,7 @@
 /*   By: vtrofyme <vtrofyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 19:17:36 by vtrofyme          #+#    #+#             */
-/*   Updated: 2025/06/14 19:23:05 by vtrofyme         ###   ########.fr       */
+/*   Updated: 2025/06/14 19:33:04 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,24 +27,21 @@ static void	reverse_rotate(t_stack **stack)
 	(*stack)->prev = last;
 	*stack = last;
 }
-void	rra(t_stack **a, int checker)
+void	rra(t_stack **a)
 {
 	reverse_rotate(a);
-	if (!checker)
-		write(1, "ra\n", 3);
+	write(1, "ra\n", 3);
 }
 
-void	rrb(t_stack **b, int checker)
+void	rrb(t_stack **b)
 {
 	reverse_rotate(b);
-	if (!checker)
-		write(1, "rb\n", 3);
+	write(1, "rb\n", 3);
 }
 
-void	rrr(t_stack **a, t_stack **b, int checker)
+void	rrr(t_stack **a, t_stack **b)
 {
 	reverse_rotate(a);
 	reverse_rotate(b);
-	if (!checker)
-		write(1, "rr\n", 3);
+	write(1, "rr\n", 3);
 }
