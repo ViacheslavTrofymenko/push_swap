@@ -6,7 +6,7 @@
 /*   By: vtrofyme <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 01:35:01 by vtrofyme          #+#    #+#             */
-/*   Updated: 2025/06/15 17:00:46 by vtrofyme         ###   ########.fr       */
+/*   Updated: 2025/06/15 19:14:34 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	free_stack(t_stack **stack)
 	}
 	*stack = NULL;
 }
+
 void	free_after_split(char **argv)
 {
 	int	i;
@@ -41,6 +42,7 @@ void	free_after_split(char **argv)
 	}
 	free(argv);
 }
+
 void	ft_error(t_stack **a, char **argv, int flag_argc_2)
 {
 	free_stack(a);

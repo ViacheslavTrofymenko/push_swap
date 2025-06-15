@@ -6,12 +6,11 @@
 /*   By: vtrofyme <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 13:46:48 by vtrofyme          #+#    #+#             */
-/*   Updated: 2025/06/15 17:00:42 by vtrofyme         ###   ########.fr       */
+/*   Updated: 2025/06/15 19:16:51 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
-# include <stdio.h>
+#include "push_swap.h"
 
 static int	ft_atoi(const char *nptr)
 {

@@ -6,7 +6,7 @@
 /*   By: vtrofyme <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 19:52:21 by vtrofyme          #+#    #+#             */
-/*   Updated: 2025/06/15 17:01:23 by vtrofyme         ###   ########.fr       */
+/*   Updated: 2025/06/15 19:16:42 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ static void	rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node)
 	set_current_position(*b);
 }
 
-static void reverse_rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node)
+static void	reverse_rotate_both(t_stack **a, t_stack **b,
+								t_stack *cheapest_node)
 {
 	while (*a != cheapest_node->target_node && *b != cheapest_node)
 		rrr(a, b);
@@ -64,6 +65,7 @@ static void	move_nodes(t_stack **a, t_stack **b)
 	finish_rotation(a, cheapest_node->target_node, 'a');
 	pa(a, b);
 }
+
 void	push_swap(t_stack **a, t_stack **b)
 {
 	t_stack	*min;

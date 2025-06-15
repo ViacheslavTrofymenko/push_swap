@@ -6,7 +6,7 @@
 /*   By: vtrofyme <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 23:21:10 by vtrofyme          #+#    #+#             */
-/*   Updated: 2025/06/15 17:01:11 by vtrofyme         ###   ########.fr       */
+/*   Updated: 2025/06/15 19:15:47 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	set_current_position(t_stack *stack)
 		i++;
 	}
 }
+
 static void	set_target_node(t_stack *a, t_stack *b)
 {
 	t_stack	*current_a;
@@ -44,7 +45,8 @@ static void	set_target_node(t_stack *a, t_stack *b)
 		current_a = a;
 		while (current_a)
 		{
-			if (current_a->value > b->value && current_a->value < best_match_index)
+			if (current_a->value > b->value
+				&& current_a->value < best_match_index)
 			{
 				best_match_index = current_a->value;
 				target_node = current_a;
@@ -84,7 +86,7 @@ void	set_cheapest(t_stack *b)
 	int		best_match_value;
 	t_stack	*best_match_node;
 
-	if(!b)
+	if (!b)
 		return ;
 	best_match_value = INT_MAX;
 	while (b)

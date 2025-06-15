@@ -6,7 +6,7 @@
 /*   By: vtrofyme <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 18:49:25 by vtrofyme          #+#    #+#             */
-/*   Updated: 2025/06/15 17:01:20 by vtrofyme         ###   ########.fr       */
+/*   Updated: 2025/06/15 19:13:43 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	rotate(t_stack **stack)
 	t_stack	*last;
 
 	if (!stack || !*stack || !(*stack)->next)
-		return;
+		return ;
 	first = *stack;
 	second = first->next;
 	last = find_last_node(*stack);
@@ -29,6 +29,7 @@ static void	rotate(t_stack **stack)
 	first->next = NULL;
 	*stack = second;
 }
+
 void	ra(t_stack **a)
 {
 	rotate(a);

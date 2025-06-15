@@ -6,7 +6,7 @@
 /*   By: vtrofyme <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 18:26:09 by vtrofyme          #+#    #+#             */
-/*   Updated: 2025/06/15 17:01:08 by vtrofyme         ###   ########.fr       */
+/*   Updated: 2025/06/15 19:14:57 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,12 @@ static void	push(t_stack **dest, t_stack **src)
 	t_stack	*node_to_push;
 
 	if (!src || !*src)
-		return;
+		return ;
 	node_to_push = *src;
 	*src = node_to_push->next;
 	if (*src)
 		(*src)->prev = NULL;
 	node_to_push->prev = NULL;
-
 	if (!*dest)
 	{
 		node_to_push->next = NULL;

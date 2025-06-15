@@ -6,7 +6,7 @@
 /*   By: vtrofyme <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 00:55:13 by viacheslav        #+#    #+#             */
-/*   Updated: 2025/06/15 17:01:13 by vtrofyme         ###   ########.fr       */
+/*   Updated: 2025/06/15 19:15:04 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ typedef struct s_stack
 {
 	int				value;
 	int				current_index;
-	int				final_index;
 	int				push_price;
 	int				is_above_median;
 	int				is_cheapest;
@@ -60,6 +59,5 @@ void	init_nodes(t_stack *a, t_stack *b);
 void	finish_rotation(t_stack **stack, t_stack *top_node, char stack_name);
 void	handle_five(t_stack **a, t_stack **b);
 void	set_current_position(t_stack *stack);
-
 
 #endif

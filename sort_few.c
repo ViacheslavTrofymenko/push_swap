@@ -6,7 +6,7 @@
 /*   By: vtrofyme <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 17:18:16 by vtrofyme          #+#    #+#             */
-/*   Updated: 2025/06/15 17:01:26 by vtrofyme         ###   ########.fr       */
+/*   Updated: 2025/06/15 19:13:23 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void	handle_three(t_stack **a)
 	if ((*a)->value > (*a)->next->value)
 		sa(a);
 }
+
 void	handle_five(t_stack **a, t_stack **b)
 {
 	while (stack_len(*a) > 3)
