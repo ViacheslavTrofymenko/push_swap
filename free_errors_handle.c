@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free_errors_handle.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vtrofyme <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vtrofyme <vtrofyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 01:35:01 by vtrofyme          #+#    #+#             */
-/*   Updated: 2025/06/15 00:00:21 by vtrofyme         ###   ########.fr       */
+/*   Updated: 2025/06/15 16:04:14 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,15 @@ void	free_after_split(char **argv)
 {
 	int	i;
 
-	i = 0;
 	if (!argv || !*argv)
 		return ;
+	i = 0;
 	while (argv[i])
 	{
 		free(argv[i]);
 		i++;
 	}
+	free(argv);
 }
 void	ft_error(t_stack **a, char **argv, int flag_argc_2)
 {

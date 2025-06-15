@@ -6,11 +6,12 @@
 /*   By: vtrofyme <vtrofyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 13:46:48 by vtrofyme          #+#    #+#             */
-/*   Updated: 2025/06/14 17:13:03 by vtrofyme         ###   ########.fr       */
+/*   Updated: 2025/06/15 15:54:35 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "push_swap.h"
+# include <stdio.h>
 
 static int	ft_atoi(const char *nptr)
 {
@@ -41,6 +42,8 @@ void	fill_stack(t_stack **a, char **argv, int flag_argc_2)
 	int		i;
 
 	i = 0;
+	if (!flag_argc_2)
+		i = 1;
 	while (argv[i])
 	{
 		if (is_syntax_error(argv[i]))
