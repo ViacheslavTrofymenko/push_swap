@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_few.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vtrofyme <vtrofyme@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vtrofyme <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 17:18:16 by vtrofyme          #+#    #+#             */
-/*   Updated: 2025/06/14 19:46:01 by vtrofyme         ###   ########.fr       */
+/*   Updated: 2025/06/15 17:01:26 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,12 @@ void	handle_three(t_stack **a)
 {
 	t_stack	*node_with_max;
 
-	if (!a || !*a)
+	if (!a || !*a || !(*a)->next || !(*a)->next->next)
 		return ;
 	node_with_max = find_max_value(*a);
 	if (node_with_max == *a)
 		ra(a);
-	if (node_with_max == (*a)->next)
+	else if (node_with_max == (*a)->next)
 		rra(a);
 	if ((*a)->value > (*a)->next->value)
 		sa(a);

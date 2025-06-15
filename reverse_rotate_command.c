@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate_command.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vtrofyme <vtrofyme@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vtrofyme <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 19:17:36 by vtrofyme          #+#    #+#             */
-/*   Updated: 2025/06/14 19:33:04 by vtrofyme         ###   ########.fr       */
+/*   Updated: 2025/06/15 17:01:18 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,18 @@ static void	reverse_rotate(t_stack **stack)
 void	rra(t_stack **a)
 {
 	reverse_rotate(a);
-	write(1, "ra\n", 3);
+	write(1, "rra\n", 4);
 }
 
 void	rrb(t_stack **b)
 {
 	reverse_rotate(b);
-	write(1, "rb\n", 3);
+	write(1, "rrb\n", 4);
 }
 
 void	rrr(t_stack **a, t_stack **b)
 {
 	reverse_rotate(a);
 	reverse_rotate(b);
-	write(1, "rr\n", 3);
+	write(1, "rrr\n", 4);
 }
