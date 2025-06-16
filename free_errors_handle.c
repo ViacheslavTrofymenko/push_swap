@@ -6,7 +6,7 @@
 /*   By: vtrofyme <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 01:35:01 by vtrofyme          #+#    #+#             */
-/*   Updated: 2025/06/15 19:14:34 by vtrofyme         ###   ########.fr       */
+/*   Updated: 2025/06/16 21:17:06 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	free_stack(t_stack **stack)
 	while (*stack)
 	{
 		tmp = (*stack)->next;
-		(*stack)->value = 0;
 		free(*stack);
 		*stack = tmp;
 	}
@@ -61,7 +60,7 @@ int	is_syntax_error(char *str)
 		i++;
 	while (str[i])
 	{
-		if (str[i] < '0' && str[i] > '9')
+		if (str[i] < '0' || str[i] > '9')
 			return (1);
 		i++;
 	}

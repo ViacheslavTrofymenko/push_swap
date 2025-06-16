@@ -6,7 +6,7 @@
 /*   By: vtrofyme <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 16:28:12 by vtrofyme          #+#    #+#             */
-/*   Updated: 2025/06/15 17:01:29 by vtrofyme         ###   ########.fr       */
+/*   Updated: 2025/06/16 20:46:32 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	append_node(t_stack **stack, int nbr)
 		return ;
 	node->next = NULL;
 	node->value = nbr;
+	node->is_cheapest = 0;
 	if (*stack == NULL)
 	{
 		*stack = node;
